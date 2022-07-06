@@ -1,0 +1,12 @@
+apiVersion: privatecloud.mendix.com/v1alpha1
+kind: OperatorVersion
+metadata:
+  name: mendix-operator-version
+spec:
+  versions:
+    repository_url: "private-cloud.registry.mendix.com"
+    builder_version: "2.3.1"
+    metrics_sidecar_version: "2.2.1"
+    operator_version: "2.5.1"
+    sidecar_version: "2.2.1"
+    storage_provisioner_version: "2.3.2"

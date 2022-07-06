@@ -1,0 +1,39 @@
+apiVersion: privatecloud.mendix.com/v1alpha1
+kind: OperatorConfiguration
+metadata:
+  name: mendix-operator-configuration
+spec:
+  buildRuntimeBaseImage: "private-cloud.registry.mendix.com/runtime-base:{{.MxRuntimeVersion}}-rhel"
+  buildResources:
+    limits:
+      cpu: "1"
+      memory: 256Mi
+    requests:
+      cpu: 250m
+      memory: 64Mi
+  sidecarResources:
+    limits:
+      cpu: 250m
+      memory: 32Mi
+    requests:
+      cpu: 100m
+      memory: 16Mi
+  metricsSidecarResources:
+    limits:
+      cpu: 100m
+      memory: 32Mi
+    requests:
+      cpu: 100m
+      memory: 16Mi
+  runtimeResources:
+    limits:
+      cpu: 1000m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 512Mi
+  runtimeMetricsConfiguration:
+    interval: PT1M
+    mode: native
+  endpoint:
+    type: ingress
