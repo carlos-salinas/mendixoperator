@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  mendixoperator:
+  - apiVersion: v2
+    appVersion: 2.5.1
+    created: "2022-07-07T17:09:44.25229+02:00"
+    description: A Helm chart for Mendix Operator (Mx4PC Component)
+    digest: f0fc475079d84584fce3779079b4804e0c5c42a783fe8a6f62f45c0f30ab0078
+    name: mendixoperator
+    type: application
+    urls:
+    - https://carlos-salinas.github.io/mendixoperator/mendixoperator-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-07-07T17:09:44.249821+02:00"
