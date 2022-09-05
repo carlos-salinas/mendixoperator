@@ -1,0 +1,57 @@
+---
+# Secret: database_plan_secret
+apiVersion: v1
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: mendix-database-{{ .Values.storageplan.database.name }}-secret
+stringData:
+  PGDATABASE: {{ .Values.storageplan.database.databaseName }}
+  PGHOST: {{ .Values.storageplan.database.host }}
+  PGPASSWORD: {{ .Values.storageplan.database.password }}
+  PGPORT: {{ .Values.storageplan.database.port }}
+  PGUSER: {{ .Values.storageplan.database.username }}
+  STRICT_TLS: "false"
+type: Opaque
+...
+---
+# StoragePlan: database_plan
+apiVersion: privatecloud.mendix.com/v1alpha1
+kind: StoragePlan
+metadata:
+  creationTimestamp: null
+  labels:
+    privatecloud.mendix.com/storage-class: ""
+    privatecloud.mendix.com/storage-plan: {{ .Values.storageplan.database.name }}
+    privatecloud.mendix.com/storage-type: database
+  name: {{ .Values.storageplan.database.name }}
+spec:
+  create:
+    command:
+    - create
+    credentialsSecretName: mendix-database-{{ .Values.storageplan.database.name }}-secret
+    instanceNameTemplate: mendix-{{.Name}}-{{.UUID}}
+    resources:
+      limits:
+        cpu: 500m
+        memory: 64Mi
+      requests:
+        cpu: 100m
+        memory: 64Mi
+    serviceAccountName: mendix-storage-provisioner
+  delete:
+    command:
+    - delete
+    credentialsSecretName: mendix-database-{{ .Values.storageplan.database.name }}-secret
+    resources:
+      limits:
+        cpu: 500m
+        memory: 64Mi
+      requests:
+        cpu: 100m
+        memory: 64Mi
+    serviceAccountName: mendix-storage-provisioner
+  provisioner: postgres96
+  type: on-demand
+status: {}
+...

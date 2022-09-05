@@ -13,9 +13,10 @@ spec:
         name: mendix-operator
     spec:
       serviceAccountName: mendix-operator
+      enableServiceLinks: false
       containers:
         - name: mendix-operator
-          image: "private-cloud.registry.mendix.com/mendix-operator:2.5.1"
+          image: "private-cloud.registry.mendix.com/mendix-operator:2.7.0"
           command:
             - mendix-operator
           imagePullPolicy: Always

@@ -1,0 +1,62 @@
+---
+# Secret: storage_plan_secret
+apiVersion: v1
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: mendix-storage-{{ .Values.storageplan.file.name }}-secret
+stringData:
+  config: |-
+    {
+            "com.mendix.core.StorageService":"com.mendix.storage.s3",
+            "com.mendix.storage.s3.EndPoint": {{ .Values.storageplan.file.endPoint }},
+            "com.mendix.storage.s3.AccessKeyId": {{ .Values.storageplan.file.accessKey }},
+            "com.mendix.storage.s3.SecretAccessKey": {{ .Values.storageplan.file.secretKey }},
+            "com.mendix.storage.s3.BucketName": "{{ .SanitizedStorageInstanceName }}",
+            "com.mendix.storage.PerformDeleteFromStorage": false
+        }
+type: Opaque
+...
+---
+# StoragePlan: storage_plan
+apiVersion: privatecloud.mendix.com/v1alpha1
+kind: StoragePlan
+metadata:
+  creationTimestamp: null
+  labels:
+    privatecloud.mendix.com/storage-class: ""
+    privatecloud.mendix.com/storage-plan: {{ .Values.storageplan.file.name }}
+    privatecloud.mendix.com/storage-type: file
+  name: {{ .Values.storageplan.file.name }}
+spec:
+  create:
+    args:
+    - --from-secret
+    - --template=com.mendix.storage.s3.BucketName
+    command:
+    - create
+    credentialsSecretName: mendix-storage-{{ .Values.storageplan.file.name }}-secret
+    instanceNameTemplate: mendix-{{.Name}}-{{.UUID}}
+    resources:
+      limits:
+        cpu: 500m
+        memory: 128Mi
+      requests:
+        cpu: 100m
+        memory: 64Mi
+    serviceAccountName: mendix-storage-provisioner
+  delete:
+    command:
+    - delete
+    credentialsSecretName: mendix-storage-{{ .Values.storageplan.file.name }}-secret
+    resources:
+      limits:
+        cpu: 500m
+        memory: 64Mi
+      requests:
+        cpu: 100m
+        memory: 64Mi
+  provisioner: basic
+  type: on-demand
+status: {}
+...
