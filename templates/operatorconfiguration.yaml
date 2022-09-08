@@ -39,7 +39,7 @@ spec:
     type: ingress
     ingress:
       annotations: 
-        "{{ .Values.ingress.className }}.ingress.kubernetes.io/proxy-body-size":"500m"
+        "{{ .Values.ingress.className }}.ingress.kubernetes.io/proxy-body-size": "500m"
       domain: {{ .Values.ingress.domainName }}
       enableTLS: false
       ingressClassName: {{ .Values.ingress.className }},
