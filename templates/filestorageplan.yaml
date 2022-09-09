@@ -9,10 +9,10 @@ stringData:
   config: |-
     {
             "com.mendix.core.StorageService":"com.mendix.storage.s3",
-            "com.mendix.storage.s3.EndPoint": {{ .Values.storageplan.file.endPoint }},
-            "com.mendix.storage.s3.AccessKeyId": {{ .Values.storageplan.file.accessKey }},
-            "com.mendix.storage.s3.SecretAccessKey": {{ .Values.storageplan.file.secretKey }},
-            "com.mendix.storage.s3.BucketName": "{{ .SanitizedStorageInstanceName }}",
+            "com.mendix.storage.s3.EndPoint": "{{ .Values.storageplan.file.endPoint }}",
+            "com.mendix.storage.s3.AccessKeyId": "{{ .Values.storageplan.file.accessKey }}"",
+            "com.mendix.storage.s3.SecretAccessKey": "{{ .Values.storageplan.file.secretKey }}",
+            "com.mendix.storage.s3.BucketName": "{{'{{ .SanitizedStorageInstanceName }}'}}",
             "com.mendix.storage.PerformDeleteFromStorage": false
         }
 type: Opaque
@@ -36,7 +36,7 @@ spec:
     command:
     - create
     credentialsSecretName: mendix-storage-{{ .Values.storageplan.file.name }}-secret
-    instanceNameTemplate: mendix-{{.Name}}-{{.UUID}}
+    instanceNameTemplate: mendix-{{'{{.Name}}'}}-{{'{{.UUID}}'}}
     resources:
       limits:
         cpu: 500m
