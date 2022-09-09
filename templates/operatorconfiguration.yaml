@@ -42,11 +42,11 @@ spec:
         "{{ .Values.ingress.className }}.ingress.kubernetes.io/proxy-body-size": "500m"
       domain: {{ .Values.ingress.domainName }}
       enableTLS: false
-      ingressClassName: {{ .Values.ingress.className }},
+      ingressClassName: {{ .Values.ingress.className }}
       path: "/"
   registry:
-    credentials: "mendix-registry-ecr-secret",
-    imageNameTemplate: "{{ .Values.registry.repositoryName}}:{{.Name}}",
-    pullURL: {{ .Values.registry.pullUrl}},
-    pushURL: {{ .Values.registry.pushUrl}},
+    credentials: "mendix-registry-ecr-secret"
+    imageNameTemplate: "{{ .Values.registry.repositoryName}}:{{.Name}}"
+    pullURL: {{ .Values.registry.pullUrl}}
+    pushURL: {{ .Values.registry.pushUrl}}
     type: "ecr"
