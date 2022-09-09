@@ -30,7 +30,7 @@ spec:
     command:
     - create
     credentialsSecretName: mendix-database-{{ .Values.storageplan.database.name }}-secret
-    instanceNameTemplate: mendix-{{`{{.Name}}`}}-{{'{{.UUID}}'}}
+    instanceNameTemplate: mendix-{{"{{"}}.Name{{"}}"}}-{{"{{"}}.UUID{{"}}"}}
     resources:
       limits:
         cpu: 500m

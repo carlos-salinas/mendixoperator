@@ -3,7 +3,7 @@ kind: OperatorConfiguration
 metadata:
   name: mendix-operator-configuration
 spec:
-  buildRuntimeBaseImage: "private-cloud.registry.mendix.com/runtime-base:{{'{{.MxRuntimeVersion}}'}}-rhel"
+  buildRuntimeBaseImage: private-cloud.registry.mendix.com/runtime-base:{{"{{"}}.MxRuntimeVersion{{"}}"}}-rhel
   buildResources:
     limits:
       cpu: "1"
