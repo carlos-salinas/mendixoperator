@@ -3,9 +3,19 @@ entries:
   mendixoperator:
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2022-09-09T18:14:52.359547+02:00"
+    created: "2022-09-12T12:23:20.897157+02:00"
     description: A Helm chart for Mendix Operator (Mx4PC Component)
-    digest: 0302ed1597ca2a1154d5f2c314810753c4a38584f1fea8e1ec3cd24270a914b2
+    digest: b131b0422bd7eb02650216af75194bf6580e99d506c7cefdc6911b88bf874214
+    name: mendixoperator
+    type: application
+    urls:
+    - https://carlos-salinas.github.io/mendixoperator/mendixoperator-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
+    appVersion: 2.7.0
+    created: "2022-09-12T12:23:20.896027+02:00"
+    description: A Helm chart for Mendix Operator (Mx4PC Component)
+    digest: a435822b50be23aa7e524cdcb175c618a98c2fad100ec5772ea89cff6712968a
     name: mendixoperator
     type: application
     urls:
@@ -13,7 +23,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2022-09-09T18:14:52.345201+02:00"
+    created: "2022-09-12T12:23:20.894194+02:00"
     description: A Helm chart for Mendix Operator (Mx4PC Component)
     digest: a10c808815bdeeded337410816db078d826cfc18b5099d57150227b4e0355777
     name: mendixoperator
@@ -23,7 +33,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2022-09-09T18:14:52.336463+02:00"
+    created: "2022-09-12T12:23:20.886134+02:00"
     description: A Helm chart for Mendix Operator (Mx4PC Component)
     digest: 590aa3a6192c379fbe00a75520d0bd605eb15c95bf1c8bc544bc8e4152d6d949
     name: mendixoperator
@@ -33,7 +43,7 @@ entries:
     version: 0.2.2
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2022-09-09T18:14:52.330169+02:00"
+    created: "2022-09-12T12:23:20.880095+02:00"
     description: A Helm chart for Mendix Operator (Mx4PC Component)
     digest: 59a4855dbfbc69fd2f99aff1cad37d87aac90a21a7fa3010500f76bc08a584c2
     name: mendixoperator
@@ -43,7 +53,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2022-09-09T18:14:52.326166+02:00"
+    created: "2022-09-12T12:23:20.875069+02:00"
     description: A Helm chart for Mendix Operator (Mx4PC Component)
     digest: a702433d634cba982578753b812374b5540d9a98c04188e9fc6e529cf2980cdd
     name: mendixoperator
@@ -53,7 +63,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 2.5.1
-    created: "2022-09-09T18:14:52.322674+02:00"
+    created: "2022-09-12T12:23:20.872283+02:00"
     description: A Helm chart for Mendix Operator (Mx4PC Component)
     digest: f0fc475079d84584fce3779079b4804e0c5c42a783fe8a6f62f45c0f30ab0078
     name: mendixoperator
@@ -61,4 +71,4 @@ entries:
     urls:
     - https://carlos-salinas.github.io/mendixoperator/mendixoperator-0.1.0.tgz
     version: 0.1.0
-generated: "2022-09-09T18:14:52.319325+02:00"
+generated: "2022-09-12T12:23:20.869628+02:00"
