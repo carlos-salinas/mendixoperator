@@ -46,7 +46,7 @@ spec:
       path: "/"
   registry:
     credentials: "mendix-registry-ecr-secret"
-    imageNameTemplate: "{{ .Values.registry.repositoryName}}:{{.Name}}"
+    imageNameTemplate: {{ .Values.registry.repositoryName}}:{{"{{"}}.Name{{"}}"}}
     pullURL: {{ .Values.registry.pullUrl}}
     pushURL: {{ .Values.registry.pushUrl}}
     type: "ecr"
