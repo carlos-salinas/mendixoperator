@@ -1,4 +1,4 @@
----
+  ---
 # Secret: database_plan_secret
 apiVersion: v1
 kind: Secret
@@ -6,12 +6,12 @@ metadata:
   creationTimestamp: null
   name: mendix-database-{{ .Values.storageplan.database.name }}-secret
 stringData:
-  PGDATABASE: {{ .Values.storageplan.database.databaseName }}
-  PGHOST: {{ .Values.storageplan.database.host }}
-  PGPASSWORD: {{ .Values.storageplan.database.password }}
-  PGPORT: {{ .Values.storageplan.database.port }}
-  PGUSER: {{ .Values.storageplan.database.username }}
-  STRICT_TLS: false
+  PGDATABASE: {{ .Values.storageplan.database.databaseName | quote }}
+  PGHOST: {{ .Values.storageplan.database.host | quote }}
+  PGPASSWORD: {{ .Values.storageplan.database.password | quote }}
+  PGPORT: {{ .Values.storageplan.database.port | quote }}
+  PGUSER: {{ .Values.storageplan.database.username | quote }}
+  STRICT_TLS: "false"
 type: Opaque
 ...
 ---
