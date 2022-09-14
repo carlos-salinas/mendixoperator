@@ -8,9 +8,9 @@ metadata:
 stringData:
   config: |-
     {
-            "com.mendix.core.StorageService":"com.mendix.storage.s3",
+            "com.mendix.core.StorageService": "com.mendix.storage.s3",
             "com.mendix.storage.s3.EndPoint": "{{ .Values.storageplan.file.endPoint }}",
-            "com.mendix.storage.s3.AccessKeyId": "{{ .Values.storageplan.file.accessKey }}"",
+            "com.mendix.storage.s3.AccessKeyId": "{{ .Values.storageplan.file.accessKey }}",
             "com.mendix.storage.s3.SecretAccessKey": "{{ .Values.storageplan.file.secretKey }}",
             "com.mendix.storage.s3.BucketName": "{{"{{"}} .SanitizedStorageInstanceName {{"}}"}}",
             "com.mendix.storage.PerformDeleteFromStorage": false
